@@ -2,6 +2,41 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.0 (2020-06-29)
+------------------
+* TurtleBot3 Drive node implementation
+* Additional Gazebo maps added
+* argument tags in the sdf file replaced with remapping tags
+* Low polygon 3D modeling applied for simulation
+* Contributors: Ryan Shim, Mikael Arguedas, Will Son
+
+2.1.0 (2019-09-10)
+------------------
+* ROS 2 migration of turtlebot3_fake_node package
+* Modified rviz config (background colour changed to white, tf display disabled)
+* Added turtlebot3_house and related world, model files
+* Contributors: Ryan Shim, Darby Lim, Pyo
+
+2.0.1 (2019-09-05)
+------------------
+* Modified dependency packages
+* Modified launch directory
+* Added a launch file for robot state publisher
+* Contributors: Darby Lim, Pyo
+
+2.0.0 (2019-08-20)
+------------------
+* Supported ROS 2 Dashing Diademata
+* Updated the CHANGELOG and version to release binary packages
+* Contributors: Darby Lim, Pyo
+
+1.3.0 (2020-06-29)
+------------------
+* Turtlebot3 Autorace 2020 implemented
+* Remove the plugin_path from gazebo_ros export
+* Remove *nix path separator
+* Contributors: Ashe Kim, Ben Wolsieffer, Sean Yen
+
 1.2.0 (2019-01-22)
 ------------------
 * move out the init() from ROS_ASSERT `#68 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/68>`_
