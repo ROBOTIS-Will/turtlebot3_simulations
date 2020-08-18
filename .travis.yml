@@ -20,7 +20,7 @@ branches:
     - foxy-devel
 
 install:
-  - git clone --quiet --depth 1 https://github.com/ROBOTIS-GIT/ros2ci.git .ros2ci
+  - git clone --quiet --depth 1 https://github.com/ROBOTIS-Will/ros2ci.git .ros2ci
 
 matrix:
   include:
