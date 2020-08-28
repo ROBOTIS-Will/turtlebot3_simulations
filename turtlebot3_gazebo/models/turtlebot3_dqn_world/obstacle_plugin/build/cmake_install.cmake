@@ -1,4 +1,4 @@
-# Install script for directory: /home/willson/turtlebot3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin
+# Install script for directory: /home/robotis/robotis_ws/src/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/willson/turtlebot3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/robotis/robotis_ws/src/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,32 +1,26 @@
-os: linux
-dist: bionic
 services:
   - docker
 
 language:
-  - generic
+  - none
 
 notifications:
   email:
     on_success: change
     on_failure: always
     recipients:
-      - willson@robotis.com
+      - pyo@robotis.com
+      - thlim@robotis.com
 
 branches:
   only:
-    - master
+    - ros2
+    - ros2-devel
+    - dashing-devel
 
 install:
-  - git clone --quiet --depth 1 https://github.com/ROBOTIS-Will/ros2ci.git .ros2ci
+  - git clone --quiet --depth 1 https://github.com/ROBOTIS-GIT/ros2ci.git .ros2ci
 
-jobs:
+matrix:
   include:
-    - name: "[Dashing]"
-      env: ROS_DISTRO="dashing"
-    - name: "[Eloquent]"
-      env: ROS_DISTRO="eloquent"
-    - name: "[Foxy]"
-      env: ROS_DISTRO="foxy"
-
-script: .ros2ci/travis.bash
+    - script: .ros2ci/travis.bash dashing
