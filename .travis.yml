@@ -1,5 +1,3 @@
-os: linux
-dist: bionic
 services:
   - docker
 
@@ -15,18 +13,17 @@ notifications:
 
 branches:
   only:
-    - master
+    - ros2
+    - ros2-devel
+    - dashing-devel
+    - eloquent-devel
+    - foxy-devel
 
 install:
-  - git clone --quiet --depth 1 https://github.com/ROBOTIS-Will/ros2ci.git .ros2ci
+  - git clone --quiet --depth 1 https://github.com/ROBOTIS-GIT/ros2ci.git .ros2ci
 
-jobs:
+matrix:
   include:
-    - name: "[Dashing]"
-      env: ROS_DISTRO="dashing"
-    - name: "[Eloquent]"
-      env: ROS_DISTRO="eloquent"
-    - name: "[Foxy]"
-      env: ROS_DISTRO="foxy"
-
-script: .ros2ci/travis.bash
+    - script: .ros2ci/travis.bash dashing
+    - script: .ros2ci/travis.bash eloquent
+    - script: .ros2ci/travis.bash nightly
