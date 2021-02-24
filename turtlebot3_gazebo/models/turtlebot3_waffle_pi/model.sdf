@@ -10,14 +10,14 @@
       <inertial>
         <pose>-0.064 0 0.048 0 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
         </inertia>
-        <mass>1.0</mass>
+        <mass>1.3729096e+00</mass>
       </inertial>
 
       <collision name="base_collision">
@@ -33,7 +33,7 @@
         <pose>-0.064 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_waffle/meshes/waffle_base.dae</uri>
+            <uri>model://turtlebot3_waffle_pi/meshes/waffle_pi_base.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -106,7 +106,7 @@
           <iyz>0.000</iyz>
           <izz>0.001</izz>
         </inertia>
-        <mass>0.125</mass>
+        <mass>0.114</mass>
       </inertial>
 
       <collision name="lidar_sensor_collision">
@@ -170,12 +170,12 @@
       <inertial>
         <pose>0.0 0.144 0.023 -1.57 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>1.1175580e-05</ixx>
+          <ixy>-4.2369783e-11</ixy>
+          <ixz>-5.9381719e-09</ixz>
+          <iyy>1.1192413e-05</iyy>
+          <iyz>-1.4400107e-11</iyz>
+          <izz>2.0712558e-05</izz>
         </inertia>
         <mass>0.1</mass>
       </inertial>
@@ -192,8 +192,8 @@
           <!-- This friction pamareter don't contain reliable data!! -->
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>100000</mu>
+              <mu2>100000</mu2>
               <fdir1>0 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -228,12 +228,12 @@
       <inertial>
         <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>1.1175580e-05</ixx>
+          <ixy>-4.2369783e-11</ixy>
+          <ixz>-5.9381719e-09</ixz>
+          <iyy>1.1192413e-05</iyy>
+          <iyz>-1.4400107e-11</iyz>
+          <izz>2.0712558e-05</izz>
         </inertia>
         <mass>0.1</mass>
       </inertial>
@@ -250,8 +250,8 @@
           <!-- This friction pamareter don't contain reliable data!! -->
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>100000</mu>
+              <mu2>100000</mu2>
               <fdir1>0 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -282,7 +282,7 @@
     </link>
 
     <link name='caster_back_right_link'>
-      <pose>-0.177 -0.064 -0.004 0 0 0</pose>
+      <pose>-0.177 -0.064 -0.004 -1.57 0 0</pose>
       <inertial>
         <mass>0.001</mass>
         <inertia>
@@ -316,7 +316,7 @@
     </link>
 
     <link name='caster_back_left_link'>
-      <pose>-0.177 0.064 -0.004 0 0 0</pose>
+      <pose>-0.177 0.064 -0.004 -1.57 0 0</pose>
       <inertial>
         <mass>0.001</mass>
         <inertia>
@@ -351,7 +351,7 @@
 
     <link name="camera_link"/>
 
-    <link name="camera_rgb_frame">
+    <link name="camera_rgb_optical_frame">
       <inertial>
         <pose>0.076 0.0 0.093 0 0 0</pose>
         <inertia>
@@ -365,14 +365,6 @@
         <mass>0.035</mass>
       </inertial>
 
-      <collision name="collision">
-        <pose>0.076 0.0 0.093 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.008 0.130 0.022</size>
-          </box>
-        </geometry>
-      </collision>
       <pose>0.076 0.0 0.093 0 0 0</pose>
       <sensor name="camera" type="camera">
         <always_on>true</always_on>
@@ -445,6 +437,15 @@
       <child>caster_back_left_link</child>
     </joint>
 
+    <joint name="imu_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>imu_link</child>
+      <pose>-0.032 0 0.068 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>    
+
     <joint name="lidar_joint" type="fixed">
       <parent>base_link</parent>
       <child>base_scan</child>
@@ -465,7 +466,7 @@
 
     <joint name="camera_rgb_joint" type="fixed">
       <parent>camera_link</parent>
-      <child>camera_rgb_frame</child>
+      <child>camera_rgb_optical_frame</child>
       <pose>0.003 0.011 0.009 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
