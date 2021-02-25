@@ -94,12 +94,12 @@ public:
     _parent->SetAnimation(anim);
   }
 
-  // Pointer to the model
+// Pointer to the model
 
 private:
   physics::ModelPtr model;
 
-  // Pointer to the update event connection
+// Pointer to the update event connection
 
 private:
   event::ConnectionPtr updateConnection;
