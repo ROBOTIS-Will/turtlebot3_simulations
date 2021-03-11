@@ -20,8 +20,8 @@ jobs:
         distribution: [dashing]
     steps:
       - uses: actions/checkout@v2
-      - uses: ros-tooling/setup-ros@v0.1
-      - uses: ros-tooling/action-ros-lint@v0.1
+      - uses: ros-tooling/setup-ros@0.0.26
+      - uses: ros-tooling/action-ros-lint@0.0.6
         with:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
@@ -45,8 +45,8 @@ jobs:
         distribution: [foxy]
     steps:
       - uses: actions/checkout@v2
-      - uses: ros-tooling/setup-ros@v0.1
-      - uses: ros-tooling/action-ros-lint@v0.1
+      - uses: ros-tooling/setup-ros@0.0.26
+      - uses: ros-tooling/action-ros-lint@0.0.6
         with:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
