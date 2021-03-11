@@ -25,6 +25,7 @@ jobs:
         with:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
+          arguments: '--filter=-linelength,+syntax'
           package-name: |
             turtlebot3
             turtlebot3_bringup
@@ -50,6 +51,7 @@ jobs:
         with:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
+          arguments: '--filter=-linelength,+syntax'
           package-name: |
             turtlebot3
             turtlebot3_bringup
