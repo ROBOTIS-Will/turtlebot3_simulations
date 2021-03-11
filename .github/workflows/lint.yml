@@ -11,8 +11,6 @@ on:
 jobs:
   ament_lint_bionic:
     runs-on: ubuntu-18.04
-    container:
-      image: ubuntu:bionic
     strategy:
       fail-fast: false
       matrix:
@@ -31,8 +29,6 @@ jobs:
             turtlebot3_gazebo
   ament_lint_focal:
     runs-on: ubuntu-20.04
-    container:
-      image: ubuntu:focal
     strategy:
       fail-fast: false
       matrix:
